@@ -1,4 +1,3 @@
-# Independence prior slab updated
 
 ss_independence <- function(X, Y, fix = rep(0,ncol(X)), c = 1, s0 = 0, S0 = 0, c0 = 1, d0 = 1, iter = 1000, print_iter = TRUE){
   require(mvtnorm)
