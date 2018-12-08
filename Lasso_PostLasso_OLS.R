@@ -7,6 +7,7 @@ iter <- 100
 MSE <- array(NA, dim = c(max_s, iter, 3))
 
 require(hdm)
+require(ggplot2)
 
 for(s in 1:max_s){
   for(j in 1:iter){
@@ -74,8 +75,6 @@ MSE_PLOT <- ggplot(MSE_total, aes(s)) +
   theme(legend.title=element_blank())
 
 MSE_PLOT
-
-ggsave(file="Github_Final/Updated Marginal Likelihood/post_lasso.png", plot = MSE_PLOT, width=4, height=1.3, dpi=1000)
 
 
 
