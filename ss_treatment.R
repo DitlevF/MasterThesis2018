@@ -1,5 +1,5 @@
 
-ss_treatment <- function(d,X, Y, kappa = 10, phi = 0.3, groups = 200, fix_regr = rep(0, ncol(X)-1), c = 1, iter = 1000, print_iter = TRUE){
+ss_treatment <- function(d,X, Y, kappa = 10, phi = 0.3, fix_regr = rep(0, ncol(X)-1), c = 1, iter = 1000, print_iter = TRUE){
   require(mvtnorm)
   require(MCMCpack)
   require(glmnet)
@@ -56,46 +56,6 @@ ss_treatment <- function(d,X, Y, kappa = 10, phi = 0.3, groups = 200, fix_regr =
     }
     return(list('aN' = aN_d, 'AN' = AN_d, 'sN' = sN, 'SN' = SN_d))
   } # Calculates posterior parameters for regressors
-  
-  sample_omega <- function(delta, omega, p, groups = 200){
-    
-    k <- length(delta)
-    G <- as.integer(groups/2)
-    
-    # Hyperpriors
-    a <- c(rep(1,G),1:(G-1),1e+100)
-    b <- c(G:1,rep(1,G))
-    
-    # Prior on groups
-    gamma <- rep(1, groups)
-    
-    # Sample z
-    prob <- matrix(NA, nrow = groups, ncol = k) # Each column j represents omega_j's probability of belonging to group i (row i)
-    z <- matrix(NA, nrow = groups, ncol = k) 
-    
-    for(i in 1:groups){
-      prob[i,] <- p[i] * dbeta(omega, a[i], b[i]) # omega^(a[i]-1)*(1-omega)^(b[i]-1) / beta(a[i],b[i])
-    }
-    for(j in 1:k){
-      prob[,j] <- prob[,j] / sum(prob[,j])
-      z[,j] <- as.integer(rmultinom(1,1,prob[,j]))
-    }
-    n <- rep(NA,groups)
-    for(i in 1:groups) n[i] <- sum(z[i,])
-    
-    Z <- rep(NA,k) # Create categorical group category, e.g. Z[j] = 2 when omega_j belongs to group 2
-    for(j in 1:k) Z[j] <- which(z[,j] == 1)
-    
-    # Sample p
-    p <- rdirichlet(1, gamma + n)
-    
-    # Sample omega
-    i_delta <- as.integer(delta!=0)
-    for(j in 1:k){
-      omega[j] <- rbeta(1, a[Z[j]] + i_delta[j], b[Z[j]] + 1 - i_delta[j])
-    }
-    return(list("omega" = omega, "p" = p, "z" = Z))
-  } # Samples omegas via a beta mixture
   
   #######################################################################
   #######################################################################
