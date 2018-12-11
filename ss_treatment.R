@@ -99,7 +99,7 @@ ss_treatment <- function(d,X, Y, kappa = 10, phi = 0.3, fix_regr = rep(0, ncol(X
   omega[-indices] <- phi
   
   for(j in 1:iter){ 
-    if(print_iter == TRUE) if (j %%1 == 0) cat("iter =", j, "\r")
+    if(print_iter == TRUE) if (j %%100 == 0) cat("iter =", j, "\r")
     
     # Step Ia: Deltas
     perm <- sample(1:k,k) # Draw a random permutation
