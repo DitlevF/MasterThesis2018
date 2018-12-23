@@ -5,8 +5,8 @@ Econometrics - A Bayesian Perspective" by Ditlev Kiersgaard Frisch.
 
 The files starting with "ss" are spike-and-slab R-functions to estimate high dimensional sparse models, and they cover:
 
-1) Spike-and-slab models with Dirac delta spike and independence slab:
-1.1) ss_individual with an individual Beta prior on the inclusion indicators
+1) Spike-and-slab models with Dirac delta spike and independence slab
+  1.1) ss_individual with an individual Beta prior on the inclusion indicators
   1.2) ss_mixture_MH with a mixture Beta prior on the inclusion indicators with Metropolis-Hastings updating of the parameters
   1.3) ss_mixture with a mixture Beta prior on the inclusion indicators with parameters fixed
   1.3) ss_common with a common Beta prior on the inclusion indicators
