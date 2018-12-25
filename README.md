@@ -17,4 +17,4 @@ Spike-and-slab model with a normal spike and NMIG prior
   1) ss_NMIG
 
        
-General note: To avoid confusion with the in-built R-function gamma, the inclusion indicator variables labelled as gamma throughout the paper are labelled as delta in the code.
+General note: To avoid confusion with the in-built R-function gamma(), the inclusion indicator variables labelled as gamma throughout the paper are labelled as delta in the code.
