@@ -1,5 +1,5 @@
 
-ss_treatment <- function(d,X, Y, kappa = 10, phi = 0.3, fix_regr = rep(0, ncol(X)-1), c = 1, iter = 1000, print_iter = TRUE){
+ss_treatment <- function(d,X, Y, zeta = 10, phi = 0.3, fix_regr = rep(0, ncol(X)-1), c = 1, iter = 1000, print_iter = TRUE){
   require(mvtnorm)
   require(MCMCpack)
   require(glmnet)
@@ -95,7 +95,7 @@ ss_treatment <- function(d,X, Y, kappa = 10, phi = 0.3, fix_regr = rep(0, ncol(X
   indices <- which(coef_lasso !=0)[-1] 
   
   omega <- rep(0,k)
-  omega[indices] <- kappa/(1+kappa)
+  omega[indices] <- zeta/(1+zeta)
   omega[-indices] <- phi/(1+phi)
   
   for(j in 1:iter){ 
