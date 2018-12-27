@@ -100,6 +100,9 @@ gen_mixture_model <- function(nobs = 100, pi_corr = 0.5, rho = 0.5, sigma2 = 1, 
   
 }
 
+##########################################################################################
+#### 1) Example with a Dirac spike, independence slab and common beta prior on omega ##### 
+##########################################################################################
 
 nobs <- 40 # Number of observations
 beta1 <- c(1/1:5, rep(0,nobs-5)) # Sparse, high-dimensional coefficient vector
@@ -113,10 +116,6 @@ burn_in <- 1000 # Burn-in
 # Generate data
 data <- gen_std_linmod_corr(mu = 1, beta1 = beta1, n = nobs, sigma2 = sigma2, seed = seed )
 X <- data$X; Y <- data$Y
-
-##########################################################################################
-#### 1) Example with a Dirac spike, independence slab and common beta prior on omega ##### 
-##########################################################################################
 
 source('ss_common.R')
 draws_common <- ss_common(X,Y, iter = iter_MCMC, c = c, print_iter = TRUE)
