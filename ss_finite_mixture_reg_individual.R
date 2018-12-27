@@ -167,7 +167,7 @@ ss_sparse_mixture <- function(y,X, groups = 2, lambda = 0, iter = 1000, print_it
     # Testing
     Rj_draws <- array(data = NA, dim = c(iter, k, groups))
     for(j in 1:iter){
-      if(print_iter == TRUE) if (j %%1000 == 0) cat("iter =", j, "\r")
+      if(print_iter == TRUE) if (j %%100 == 0) cat("iter =", j, "\r")
       # Step 1 and 2: Sample z and rho
       if(length(unique(z)) < groups) break # Stop algorithm if trapped at local minimum with zero observations
       
