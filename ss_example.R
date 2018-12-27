@@ -19,7 +19,7 @@ setwd("Insert_own_directory")
 ##########################################################################################
 
 # Load packages
-Packages <- c('mvtnorm', 'coda')
+Packages <- c('mvtnorm', 'coda', 'MCMCpack', 'glmnet')
 invisible(lapply(Packages, require, character.only = TRUE))
 
 # Functions to generate models
