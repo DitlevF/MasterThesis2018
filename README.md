@@ -1,6 +1,6 @@
 # MasterThesis2018
 
-This page holds the code for the M.Sc. thesis in Economics at the University of Copenhagen "High Dimensional Sparse 
+This page holds the code for the M.Sc. thesis in Economics at the University of Copenhagen "High Dimensional 
 Econometrics - A Bayesian Perspective" by Ditlev Kiersgaard Frisch.
 
 The file "ss_example" is an example code for conducting spike-and-slab estimation of
