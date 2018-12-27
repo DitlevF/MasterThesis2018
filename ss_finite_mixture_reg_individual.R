@@ -254,8 +254,6 @@ ss_sparse_mixture <- function(y,X, groups = 2, lambda = 0, iter = 1000, print_it
     t <- q - 1
     q <- if(j == iter) max_tries else q + 1
   }
-  if(t > 0) cat('Note: The sampler got stuck', t, 'time(s) during the process with zero 
-                observations allocated to one of the groups, and was restarted to provide convergence to the desired number of groups')
   draws <- list('betas' = beta_draws,'Rj' = Rj_draws, 'deltas' = delta_draws, 'z' = data.frame('z_draws' = z_draws),
                 'sigmas' = sigma_draws)
   return(draws)
