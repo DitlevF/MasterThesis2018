@@ -17,6 +17,9 @@ Spike-and-slab models with Dirac delta spike and independence slab
   
   5) ss_treatment with a two-step treatment prior on the inclusion indicators with a first-step approximation via a Lasso          with a 10-fold cross-validated penalty term.
   
+  6) ss_finite_mixture_reg_individual for estimating finite mixture models of linear regressions with an individual beta
+  prior on the inclusion indicators.
+  
 Spike-and-slab model with a normal spike and NMIG prior
   1) ss_NMIG
 
