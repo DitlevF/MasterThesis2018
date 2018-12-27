@@ -148,6 +148,8 @@ X <- as.matrix(cbind(d,x))
 c <- sqrt(nobs)
 
 draws_treat <- ss_treatment(d,x,Y, iter = iter_MCMC, c = c,  print_iter = TRUE)
+
+# Posterior distribution of treatment parameter
 alpha_zero_hat <- draws_treat$betas[burn_in:iter_MCMC,]
 alpha_zero_hat <- as.mcmc(alpha_zero_hat[,1])
 plot(alpha_zero_hat)
