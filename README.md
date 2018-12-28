@@ -7,6 +7,9 @@ The file "ss_example" is an example code for conducting spike-and-slab estimatio
 the three types of HDS models discussed in the paper, which requires placing the files ss_common, ss_treatment and
 ss_finite_mixture_reg_individual in your own working directory folder.
 
+
+FUNCTIONS
+
 The files starting with "ss" are spike-and-slab R-functions to estimate high dimensional sparse models, and they cover:
 
 Spike-and-slab models with Dirac delta spike and independence slab
@@ -25,3 +28,9 @@ Spike-and-slab model with a normal spike and NMIG prior
 
        
 General note: To avoid confusion with the in-built R-function gamma(), the inclusion indicator variables labelled as gamma throughout the paper are labelled as delta in the code.
+
+EMPIRICAL EXAMPLE
+
+The file Abortion_Create_Dataset creates the data set with an expanded covariate set used for the empirical example using the file levitt_ex.dat downloaded from Christian Hansen's homepage http://faculty.chicagobooth.edu/christian.hansen/research/
+
+The file Abortion_SpikeSlab_Estimation conducts the estimation via the proposed two-step treatment spike-and-slab model.
