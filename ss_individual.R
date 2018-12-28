@@ -1,4 +1,3 @@
-# Independence prior slab updated
 
 ss_individual <- function(X, Y, fix = rep(0,ncol(X)), a_omega_start, b_omega_start, c = 1, iter = 1000, print_iter = TRUE){
   require(mvtnorm)
