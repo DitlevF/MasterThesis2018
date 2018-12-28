@@ -1,5 +1,5 @@
 
-ss_treatment <- function(d,X, Y, zeta = 10, phi = 0.3, groups = 200, fix_regr = rep(0, ncol(X)-1), c = 1, iter = 1000, print_iter = TRUE){
+ss_treatment <- function(d,X, Y, zeta = 10, phi = 0.4, groups = 200, fix_regr = rep(0, ncol(X)-1), c = 1, iter = 1000, print_iter = TRUE){
   require(mvtnorm)
   require(MCMCpack)
   require(glmnet)
@@ -136,7 +136,7 @@ ss_treatment <- function(d,X, Y, zeta = 10, phi = 0.3, groups = 200, fix_regr = 
   
   omega <- rep(0,k)
   omega[indices] <- zeta/(1+zeta)
-  omega[-indices] <- phi
+  omega[-indices] <- phi/(1+phi)
   
   for(j in 1:iter){ 
     if(print_iter == TRUE) if (j %%100 == 0) cat("iter =", j, "\r")
