@@ -5,7 +5,6 @@ rm(list = ls())
 
 # Set working directory
 setwd("Insert_own_directory")
-setwd("Github_Final/Final Scripts/") # My own
 
 Packages <- c('tidyverse', 'plm')
 invisible(lapply(Packages, require, character.only = TRUE))
