@@ -2,7 +2,6 @@
 rm(list = ls())
 
 setwd("Insert_own_directory")
-setwd("Github_Final/Final Scripts/") # My own
 
 # Read Publicy Available Data from Christian Hansen homepage
 data <- read.delim('levitt_ex.dat')
