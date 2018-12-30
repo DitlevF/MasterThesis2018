@@ -164,7 +164,6 @@ ss_sparse_mixture <- function(y,X, groups = 2, lambda = 0, iter = 1000, print_it
     omega_draws <- array(data = NA, dim = c(iter, k, groups))
     z_omega_draws <- array(data = NA, dim = c(iter, k, groups))
     
-    # Testing
     Rj_draws <- array(data = NA, dim = c(iter, k, groups))
     for(j in 1:iter){
       if(print_iter == TRUE) if (j %%100 == 0) cat("iter =", j, "\r")
