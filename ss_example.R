@@ -3,6 +3,8 @@ rm(list=ls())
 
 # Set working directory
 setwd("Insert_own_directory")
+# Note: To run the program, you need to place the R-scripts "ss_common.R", "ss_treatment.R" and
+#"ss_finite_mixture_reg_individual.R" in your working directory folder.
 
 ##################################################################################################
 ##################################################################################################
